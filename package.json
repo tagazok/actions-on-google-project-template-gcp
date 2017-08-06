@@ -1,0 +1,31 @@
+{
+    "name": "actions-on-google-project-template",
+    "version": "1.0.0",
+    "description": "A project starter for Actions on Google applications.",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run test && npm run grok",
+        "test": "npm run fun -- deploy agent --trigger-http",
+        "logs": "npm run fun -- logs read",
+        "deploy": "gcloud beta functions deploy agent --stage-bucket actions-on-google-project-template/ --trigger-http",
+        "fun": "functions",
+        "grok": "ngrok http 8010"
+    },
+    "keywords": [
+        "chatbot",
+        "assistant",
+        "google-assistant",
+        "actions-on-google",
+        "google-home"
+    ],
+    "author": "Wassim Chegham <contact@wassimchegham.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "ngrok": "^2.2.15",
+        "@google-cloud/functions-emulator": "^1.0.0-alpha.22"
+    },
+    "dependencies": {
+        "actions-on-google": "^1.2.0",
+        "node-fetch": "^1.7.1"
+    }
+}
